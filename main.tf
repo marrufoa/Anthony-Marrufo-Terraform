@@ -33,10 +33,10 @@ resource "aws_sub" "public" {
 }
 
 resource "aws_sub" "private" {
-  count                   = 2
-  vpc_id                  = aws_vpc.main.vpc_id
-  cidr_block              = cidr_block(aws_vpc.main.cidr_block, 8, count.index + 2)
+  count      = 2
+  vpc_id     = aws_vpc.main.vpc_id
+  cidr_block = cidr_block(aws_vpc.main.cidr_block, 8, count.index + 2)
   tags = {
-    "Name" = "${var.default_tags.env}-Private-Subnet-${data.aws.availability_zones.availability_zone.name[count.index]"
+    "Name" = "${var.default_tags.env}-Private-Subnet-${data.aws.availability_zones.availability_zone.name[count.index]}"
   }
 }
