@@ -40,3 +40,4 @@ resource "aws_sub" "private" {
     "Name" = "${var.default_tags.env}-Private-Subnet-${data.aws.availability_zones.availability_zone.name[count.index]}"
   }
 }
+
