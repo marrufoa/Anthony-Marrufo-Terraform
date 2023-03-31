@@ -14,7 +14,7 @@ resource "aws_security_group" "sg" {
     }
   }
   dynamic "egress" {
-    for_each = var.sg_db_engress
+    for_each = var.sg_db_egress
     content {
       from_port       = egress.value.port
       to_port         = egress.value.port

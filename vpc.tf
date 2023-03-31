@@ -4,6 +4,11 @@ terraform {
       source  = "hashicorp/aws"
       version = "4.60.0"
     }
+  } #bucket must be hard-coded
+  backend "s3" {
+    bucket = "anthonym-tf-bucket"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
   }
 }
 
@@ -17,7 +22,7 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames             = true
   enable_dns_support               = true
   tags = {
-    "name" = "${var.default_tags.env}-VPC"
+    "Name" = "${var.default_tags.env}-VPC"
   }
 }
 

@@ -39,7 +39,7 @@ variable "sg_db_ingress" {
   }
 }
 
-variable "sg_db_engress" {
+variable "sg_db_egress" {
   type = map(object({
     port     = number
     protocol = string

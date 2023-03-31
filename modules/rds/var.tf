@@ -15,7 +15,7 @@ variable "sg_db_ingress" {
   }))
   description = "map of ingress rules"
 }
-variable "sg_db_engress" {
+variable "sg_db_egress" {
   type = map(object({
     port     = number
     protocol = string
